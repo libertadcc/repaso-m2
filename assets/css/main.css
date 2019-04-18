@@ -19,7 +19,9 @@ body {
   padding: 10px;
   background: #fff;
   box-shadow: 0 1px 5px rgba(0, 0, 0, 0.15);
+  cursor: pointer;
 }
+/* No funcionan los estilos!!! */
 .news__item--from-mars {
   border-color: #BC2731;
   box-shadow: 0 1px 4px rgba(188, 39, 49, 0.6);
@@ -39,5 +41,9 @@ body {
 .news__image {
   display: block;
   width: 100%;
+  height: 200px;
+}
+.news__item--no-image-visible .news__image {
+  display: none;
 }
 
