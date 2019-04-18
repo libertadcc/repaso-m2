@@ -43,4 +43,19 @@ for(let i = 0; i<data.length; i++){
   list.appendChild(image);
 
   news.appendChild(list);
+
+  //Ejercicio 2. Añadir una clase si el título incluía la palabra Mars o Martians
+  const titles = data[i].title;
+  for (let j = 0; j<titles.length; j++){
+    if (titles.includes('Mars')){
+      list.classList.add('.new__item--from-mars');
+      title.classList.add('.new__item--from-mars');
+      image.classList.add('.new__item--from-mars');
+
+    } else if (titles.includes('Martians')){
+      list.classList.add('.new__item--from-mars');
+      title.classList.add('.new__item--from-mars');
+      image.classList.add('.new__item--from-mars');
+    } 
+  }
 }
