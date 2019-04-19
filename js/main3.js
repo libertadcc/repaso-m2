@@ -62,13 +62,15 @@ fetch(url)
         const [level] = color;
         const colors = level.colors;
         const [yellow, orange, rojo, pink, white]= colors;
-        console.log(pink);
-      
 
-        const colorcitos = document.querySelector('.colorcitos');
-        const palet1 = document.createElement('div');
-        const palet1
-        
-        colorcitos.appendChild(palet1);        
+        for (let j = 0; j<colors.length; j++){
+          const colorcitos = document.querySelector('.colorcitos');
+          const palet1 = document.createElement('div');
+
+          palet1.classList.add('color__item');
+          palet1.classList.add(`style="background-color:#${colors[j]}"`);
+
+          colorcitos.appendChild(palet1);
+        }
       });
   });

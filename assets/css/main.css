@@ -46,4 +46,16 @@ body {
 .news__item--no-image-visible .news__image {
   display: none;
 }
-
+/* No se pintan los colores en el div!!! */
+.colorcitos {
+  width: 100%;
+  height: 200px;
+  background: rebeccapurple;
+  display: flex;
+  flex-direction: row;
+  opacity: .3;
+}
+.color__item{
+  width: 40px;
+  height: 40px;
+}
