@@ -46,26 +46,26 @@ fetch(url)
           image.classList.add('.new__item--from-mars');
         }
       }
-
       function showImage(){
         list.classList.toggle('news__item--no-image-visible');
       }
       list.addEventListener('click', showImage);
     }
+  });
 
-    fetch(urlColor)
-      .then(function(resp){
-        return resp.json();
-      })
-      .then(function(respu){
-        const color = respu.palettes;
-        const [level] = color;
-        const colors = level.colors;
-        const [yellow, orange, rojo, purple, blue]= colors;
+// Ejercicio 5- Una paleta de color
+fetch(urlColor)
+  .then(function(resp){
+    return resp.json();
+  })
+  .then(function(respu){
+    const color = respu.palettes;
+    const [level] = color;
+    const colors = level.colors;
+    const [yellow, orange, rojo, purple, blue]= colors;
 
-        for (let j = 0; j<colors.length; j++){
-          const colorcitos = document.querySelector('.colorcitos');
-          colorcitos.innerHTML += ` <li class="color__item" style="background-color:#${colors[j]}"></li>`;
-        }
-      });
+    for (let j = 0; j<colors.length; j++){
+      const colorcitos = document.querySelector('.colorcitos');
+      colorcitos.innerHTML += `<li class="color__item" style="background-color:#${colors[j]}"></li>`;
+    }
   });
