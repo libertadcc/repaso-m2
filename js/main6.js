@@ -19,6 +19,7 @@ fetch(colorAPI)
 
       title.appendChild(titleCont);
       origin.appendChild(originCont);
+
       palette.appendChild(title);
       palette.appendChild(origin);
 
@@ -32,8 +33,8 @@ fetch(colorAPI)
         item.setAttribute('style', `background-color: #${colors}`);
         color_container.appendChild(item);
       }
-      const container = document.querySelector('.list');
-      
+      const container = document.querySelector('.container');
+
       palette.appendChild(color_container);
       container.appendChild(palette);
     }
