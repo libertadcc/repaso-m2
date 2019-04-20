@@ -1,27 +1,40 @@
 'use strict';
 
 
-fetch('https://raw.githubusercontent.com/Adalab/Easley-ejercicios-de-fin-de-semana/master/data/palettes.json')
+const colorAPI = 'https://raw.githubusercontent.com/Adalab/Easley-ejercicios-de-fin-de-semana/master/data/palettes.json';
 
-  .then(response=>response.json())
-  .then(data=> {
-    for (let i = 0; i<data.palettes.length; i++) {
-      const palettesContainer = document.querySelector('.container');
+fetch(colorAPI)
+  .then(res=>res.json())
+  .then(data=>{
+    for (const arrPalette of data.palettes){
 
-      const palettesName = document.createTextNode(data.palettes[i].name);
-      const palettesColors = document.createTextNode(data.palettes[i].colors);
+      const title = document.createElement('h2');
+      const origin = document.createElement('h3');
+      const colors = document.createElement('div');
+      const palette = document.createElement('li');
 
-      const list = document.createElement('ul');
-      const listTitle = document.createElement('h2');
-      listTitle.appendChild(palettesName);
-      list.appendChild(listTitle);
-      const color = document.createElement('li');
-      color.appendChild(palettesColors);
 
-      list.appendChild(color);
+      const titleCont = document.createTextNode(arrPalette.name);
+      const originCont = document.createTextNode(arrPalette.from);
+
+      title.appendChild(titleCont);
+      origin.appendChild(originCont);
+      palette.appendChild(title);
+      palette.appendChild(origin);
+
+      const color_container = document.createElement('div');
+      color_container.classList.add('color_container');
+
+      for (const colors of arrPalette.colors) {
+        
+        const item = document.createElement('div');
+        item.classList.add('color__item');
+        item.setAttribute('style', `background-color: #${colors}`);
+        color_container.appendChild(item);
+      }
+      const container = document.querySelector('.list');
       
-      palettesContainer.appendChild(list);
-      //En un div grande, irán distintas listas de colores.
-        //Se meten todos los colores en un mismo elmento de la lista.
+      palette.appendChild(color_container);
+      container.appendChild(palette);
     }
   });
