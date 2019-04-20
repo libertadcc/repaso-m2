@@ -25,16 +25,20 @@ fetch(colorAPI)
       palette.appendChild(title);
       palette.appendChild(origin);
 
+      //Un div al que añadiremos los colores
       const color_container = document.createElement('div');
       color_container.classList.add('color_container');
 
+      //Bucle de la característica color de todas las paletas. Se muestran los arrays de colores de cada objeto
       for (const colors of arrPalette.colors) {
-        const item = document.createElement('div');
+        //Recorremos todos los colores de cada paleta y se van añadiendo como atributo al li "item" creado. Esta lista se mete en el div superior (color__container)
+        const item = document.createElement('li');
         item.classList.add('color__item');
         item.setAttribute('style', `background-color: #${colors}`);
         color_container.appendChild(item);
       }
     
+      //Todo al contenedor principal
       palette.appendChild(color_container);
       container.appendChild(palette);
     }
