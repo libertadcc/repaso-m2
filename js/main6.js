@@ -12,6 +12,7 @@ fetch(colorAPI)
       const title = document.createElement('h2');
       const origin = document.createElement('h3');
       const palette = document.createElement('li');
+      palette.classList.add('palette');
 
       //Contenido
       const titleCont = document.createTextNode(`Nombre: ${arrPalette.name}`);
@@ -37,9 +38,19 @@ fetch(colorAPI)
         item.setAttribute('style', `background-color: #${colors}`);
         color_container.appendChild(item);
       }
-    
+
       //Todo al contenedor principal
       palette.appendChild(color_container);
       container.appendChild(palette);
+
+
+      // ejercicio 7
+      function selectPalette(){
+        palette.classList.toggle('selected__palette');
+      }
+
+      palette.addEventListener('click', selectPalette);
     }
   });
+
+
