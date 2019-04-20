@@ -36,15 +36,19 @@ fetch(colorAPI)
       }
       palette.appendChild(color_container);
       container.appendChild(palette);
-    }});
+      palette.classList.add('hidden');
 
-function search(){
-  if (titleCont.includes('Serenity'){
-    
-  }
-    console.log('sere');
-  
-  
-}
+      const filter = () => {
+        if (titleCont.includes(input.value)) {
+          palette.classList.add('nohi');
+        } else {
+          palette.classList.remove('nohi');
+          palette.classList.add('hidden');
+        }
+      };
+      input.addEventListener('keyup', filter);
+    }
+  });
 
-btn.addEventListener('click', search);
+
+

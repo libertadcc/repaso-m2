@@ -57,3 +57,11 @@ body {
   width: 30vw;
   height: 40px;
 }
+
+.hidden {
+  display: none;
+}
+
+.nohi {
+  display: block;
+}
